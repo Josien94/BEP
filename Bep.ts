@@ -1,7 +1,7 @@
 /**
  * Blocks for driving the Kitronik I2C 16-Servo Driver Board
  */
-//% weight=100 color=#00A654 icon="\uf085" block="I2C 16-Servo"
+//% weight=100 color=#00A654 icon="\uf085" block="BEP"
 namespace BEP {
 
 //Some useful parameters. 
