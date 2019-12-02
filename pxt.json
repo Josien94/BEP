@@ -7,7 +7,7 @@
         "core": "*"
     },
     "files": [
-        "BEP.ts"
+        "main.ts"
     ],
   
     "public": true
