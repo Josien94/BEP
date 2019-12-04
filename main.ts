@@ -134,10 +134,19 @@ namespace BEP {
 	let choice = degrees
 	let degrees2 = degrees
 	
-	if (choice ==2){
-		degrees2=52
+	if (choice ==1){
+		degrees2=15
 	}
-	else{
+	else if(choice==2){
+		degrees2 = 52
+	}
+	else if(choice==3){
+		degrees2 = 89
+	}
+	else if(choice ==4){
+		degrees2 = 126
+	}
+	else if(choice == 5){
 		degrees2 = 163
 	}
 	
