@@ -123,12 +123,23 @@ namespace BEP {
      */
     //% blockId=kitronik_I2Cservo_write
     //% block="set%Servo|to%degrees"
-	//% degrees.min=0 degrees.max=180
+	//% degrees.min=1 degrees.max=5
 	
     export function servoWrite(Servo: Servos, degrees: number): void {
         if (initalised == false) {
             secretIncantation()
         }
+	    
+	// Calculate the right degrees, based on 4 step input: 1 = 15, 2 = 52,  3 = 89, 4 = 126, 5 = 163 with base = 15 degrees, intermdiate steps = 37
+	let choice = degrees
+	switch(choice){
+		case 1: degrees = 15 ;
+		case 2: degrees = 52;
+		case 3: degrees = 89;
+		case 4: degrees = 126;
+		case 5: degrees = 163;
+	}
+	    
         let buf = pins.createBuffer(2)
         let HighByte = false
         let deg100 = degrees * 100
