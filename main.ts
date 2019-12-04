@@ -119,20 +119,20 @@ namespace BEP {
 	 * if the PCA has not yet been initialised calls the initialisation routine
 	 *
      * @param Servo Which servo to set
-	 * @param degrees the angle to set the servo to
+	 * @param stand the angle to set the servo to
      */
     //% blockId=kitronik_I2Cservo_write
-    //% block="Zet%Servo|op stand%degrees"
-	//% degrees.min=1 degrees.max=5
+    //% block="Zet%Servo|op stand%stand"
+	//% stand.min=1 stand.max=5
 	
-    export function servoWrite(Servo: Servos, degrees: number): void {
+    export function servoWrite(Servo: Servos, stand: number): void {
         if (initalised == false) {
             secretIncantation()
         }
 	    
 	// Calculate the right degrees, based on 4 step input: 1 = 15, 2 = 52,  3 = 89, 4 = 126, 5 = 163 with base = 15 degrees, intermdiate steps = 37
-	let choice = degrees
-	let degrees2 = degrees
+	let choice = stand
+	let degrees2 = stand
 	
 	if (choice ==1){
 		degrees2=15
@@ -150,14 +150,7 @@ namespace BEP {
 		degrees2 = 163
 	}
 	
-	    //switch(choice){
-		//case 1: degrees2 = 15 ;
-		//case 2: degrees2 = 52;
-		//case 3: degrees2 = 89;
-		//case 4: degrees2 = 126;
-		//case 5: degrees2 = 163;
-	//}
-	    
+
         let buf = pins.createBuffer(2)
         let HighByte = false 
         let deg100 = degrees2 * 100
