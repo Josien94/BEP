@@ -141,7 +141,7 @@ namespace BEP {
 		degrees2 = 52
 	}
 	else if(choice==3){
-		degrees2 = 89
+		degrees2 = 90
 	}
 	else if(choice ==4){
 		degrees2 = 126
