@@ -123,7 +123,7 @@ namespace BEP {
      */
     //% blockId=kitronik_I2Cservo_write
     //% block="set%Servo|to%degrees"
-	//% degrees.min=0 degrees.max=180
+	//% degrees.min=1 degrees.max=5
 	
     export function servoWrite(Servo: Servos, degrees: number): void {
         if (initalised == false) {
