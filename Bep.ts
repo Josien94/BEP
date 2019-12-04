@@ -130,14 +130,14 @@ namespace BEP {
             secretIncantation()
         }
 	
-	// Calculate the right degrees, based on 4 step input: 1 = 15, 2 = 55, 3 = 75, 4 = 115, 5 = 155 with base = 15 degrees
+	// Calculate the right degrees, based on 4 step input: 1 = 15, 2 = 52,  3 = 89, 4 = 126, 5 = 163 with base = 15 degrees, intermdiate steps = 37
 	let choice = degrees
 	switch(choice){
 		case 1: degrees = 15 ;
-		case 2: degrees = 55;
-		case 3: degrees = 75;
-		case 4: degrees = 115;
-		case 5: degrees = 155;
+		case 2: degrees = 52;
+		case 3: degrees = 89;
+		case 4: degrees = 126;
+		case 5: degrees = 163;
 	}
 	
         let buf = pins.createBuffer(2)
