@@ -122,8 +122,8 @@ namespace BEP {
 	 * @param degrees the angle to set the servo to
      */
     //% blockId=kitronik_I2Cservo_write
-    //% block="set%Servo|to%degrees"
-	//% degrees.min=0 degrees.max=180
+    //% block="Zet%Servo|op stand%degrees"
+	//% degrees.min=1 degrees.max=5
 	
     export function servoWrite(Servo: Servos, degrees: number): void {
         if (initalised == false) {
@@ -131,9 +131,17 @@ namespace BEP {
         }
 	    
 	// Calculate the right degrees, based on 4 step input: 1 = 15, 2 = 52,  3 = 89, 4 = 126, 5 = 163 with base = 15 degrees, intermdiate steps = 37
-	//let choice = degrees
-	//let degrees2 = degrees
-	//switch(choice){
+	let choice = degrees
+	let degrees2 = degrees
+	
+	if (choice ==2){
+		degrees2=52
+	}
+	else{
+		degrees2 = 163
+	}
+	
+	    //switch(choice){
 		//case 1: degrees2 = 15 ;
 		//case 2: degrees2 = 52;
 		//case 3: degrees2 = 89;
@@ -143,7 +151,7 @@ namespace BEP {
 	    
         let buf = pins.createBuffer(2)
         let HighByte = false 
-        let deg100 = degrees * 100
+        let deg100 = degrees2 * 100
         let PWMVal100 = deg100 * ServoMultiplier
         let PWMVal = PWMVal100 / 10000
         PWMVal = Math.floor(PWMVal)
