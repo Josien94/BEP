@@ -20,22 +20,22 @@ namespace BEP {
 
     //nice big list of servos for the block to use. These represent register offsets in the PCA9865
     export enum Servos {
-        Servo1 = 0x08, // Rechteroog is pin 1
-        Servo2 = 0x0C,		// Linkeroog is pin 2
-        Servo3 = 0x10,		// Omhoog of omlaag is pin 3
-        Servo4 = 0x14,		// Rechter wenkbrauw
-        Servo5 = 0x18,		// Linkerwenkbrauw 
-        Servo6 = 0x1C,		// Rechter ooglid (Servo6)
-        Servo7 = 0x20,		// Linker ooglied is pin 7 (Servo7)
-        Servo8 = 0x24,
-        Servo9 = 0x28,
-        Servo10 = 0x2C,
-        Servo11 = 0x30,
-        Servo12 = 0x34,
-        Servo13 = 0x38,
-        Servo14 = 0x3C,
-        Servo15 = 0x40,
-        Servo16 = 0x44,
+        Rechteroog = 0x08, // Rechteroog is pin 1
+        Linkeroog = 0x0C,		// Linkeroog is pin 2
+        Omhoog_omlaag = 0x10,		// Omhoog of omlaag is pin 3
+        Rechter_wenkbrauw = 0x14,		// Rechter wenkbrauw
+        Linker_wenkbrauw = 0x18,		// Linkerwenkbrauw 
+        Rechter_ooglid = 0x1C,		// Rechter ooglid (Servo6)
+        Linker_ooglid = 0x20,		// Linker ooglied is pin 7 (Servo7)
+        //Servo8 = 0x24,
+        //Servo9 = 0x28,
+        //Servo10 = 0x2C,
+        //Servo11 = 0x30,
+        //Servo12 = 0x34,
+        //Servo13 = 0x38,
+        //Servo14 = 0x3C,
+        //Servo15 = 0x40,
+        //Servo16 = 0x44,
     }
 
 	export enum BoardAddresses{
