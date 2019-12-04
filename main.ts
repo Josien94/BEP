@@ -1,7 +1,7 @@
 /**
  * Blocks for driving the Kitronik I2C 16-Servo Driver Board
  */
-//% weight=100 color=#00A654 icon="\uf085" block="I2C 16-Servo BEP"
+//% weight=100 color=#F5992B icon="\uf085" block="Bouw je BEP"
 namespace BEP {
 
 //Some useful parameters. 
@@ -20,13 +20,13 @@ namespace BEP {
 
     //nice big list of servos for the block to use. These represent register offsets in the PCA9865
     export enum Servos {
-        Servo1 = 0x08,
-        Servo2 = 0x0C,
-        Servo3 = 0x10,
-        Servo4 = 0x14,
-        Servo5 = 0x18,
-        Servo6 = 0x1C,
-        Servo7 = 0x20,
+        Servo1 = 0x08, // Rechteroog is pin 1
+        Servo2 = 0x0C,		// Linkeroog is pin 2
+        Servo3 = 0x10,		// Omhoog of omlaag is pin 3
+        Servo4 = 0x14,		// Rechter wenkbrauw
+        Servo5 = 0x18,		// Linkerwenkbrauw 
+        Servo6 = 0x1C,		// Rechter ooglid (Servo6)
+        Servo7 = 0x20,		// Linker ooglied is pin 7 (Servo7)
         Servo8 = 0x24,
         Servo9 = 0x28,
         Servo10 = 0x2C,
@@ -132,17 +132,18 @@ namespace BEP {
 	    
 	// Calculate the right degrees, based on 4 step input: 1 = 15, 2 = 52,  3 = 89, 4 = 126, 5 = 163 with base = 15 degrees, intermdiate steps = 37
 	let choice = degrees
+	let degrees2 = degrees
 	switch(choice){
-		case 1: degrees = 15 ;
-		case 2: degrees = 52;
-		case 3: degrees = 89;
-		case 4: degrees = 126;
-		case 5: degrees = 163;
+		case 1: degrees2 = 15 ;
+		case 2: degrees2 = 52;
+		case 3: degrees2 = 89;
+		case 4: degrees2 = 126;
+		case 5: degrees2 = 163;
 	}
 	    
         let buf = pins.createBuffer(2)
         let HighByte = false
-        let deg100 = degrees * 100
+        let deg100 = degrees2 * 100
         let PWMVal100 = deg100 * ServoMultiplier
         let PWMVal = PWMVal100 / 10000
         PWMVal = Math.floor(PWMVal)
